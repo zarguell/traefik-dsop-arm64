@@ -29,6 +29,7 @@ jobs:
         niet resources hardening_manifest.yaml -o resources.json
         sed 's/amd64/arm64/g' resources.json > resources_arm.json
         URL=$(niet url resources_arm.json)
+        echo $URL
         curl --silent --output traefik.tar.gz $URL
         rm resources*
 
