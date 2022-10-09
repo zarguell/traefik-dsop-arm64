@@ -1,4 +1,4 @@
-ARG BASE_REGISTRY=registry.hub.docker.com
+ARG BASE_REGISTRY=docker.io
 ARG BASE_IMAGE=zarguell/ubi/ubi8
 ARG BASE_TAG=latest
 
