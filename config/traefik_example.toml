@@ -1,0 +1,24 @@
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+  [entryPoints.web.http]
+    [entryPoints.web.http.redirections]
+      [entryPoints.web.http.redirections.entryPoint]
+        to = "websecure"
+        scheme = "https"
+  [entryPoints.ping]
+      address = ":8082"
+
+  [entryPoints.websecure]
+    address = ":443"
+
+[api]
+  insecure = true
+
+[ping]
+  entryPoint = "ping"
+
+[log]
+  level = "DEBUG"
+
+[accessLog]
