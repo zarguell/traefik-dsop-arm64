@@ -18,7 +18,7 @@ jobs:
     - name: Clone/Copy Remote
       run: |-
         git clone https://repo1.dso.mil/dsop/opensource/traefik/traefik.git
-        rsync -av traefik/ ./ --exclude traefik/Dockerfile --exclude traefik/.gitlab --exclude traefik/.git
+        rsync -a --exclude={'Dockerfile','.gitlab','.git'} traefik/ ./
         rm -rf traefik
 
     - name: Commit and push if it changed
