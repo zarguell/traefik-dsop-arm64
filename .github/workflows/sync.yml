@@ -15,12 +15,12 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Clone Remote and Preserve local .git
+    - name: Clone/Copy Remote
       run: |-
-        mv .git .git_local
-        git clone https://repo1.dso.mil/dsop/opensource/traefik/traefik.git .
-        rm -rf .git
-        mv .git_local .git
+        git clone https://repo1.dso.mil/dsop/opensource/traefik/traefik.git
+        cp -r traefik/* ./
+        cp traefik/.gitignore ./
+        rm -rf traefik
 
     - name: Commit and push if it changed
       run: |-
