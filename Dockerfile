@@ -1,5 +1,5 @@
 ARG BASE_REGISTRY=docker.io
-ARG BASE_IMAGE=zarguell/ubi/ubi8
+ARG BASE_IMAGE=zarguell/ubi8
 ARG BASE_TAG=latest
 
 FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
