@@ -1,0 +1,32 @@
+name: Sync From IronBank
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '6 4 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Clone Remote and Preserve local .git
+      run: |-
+        mv .git .git_local
+        git clone https://repo1.dso.mil/dsop/opensource/traefik/traefik.git .
+        rm -rf .git
+        mv .git_local .git
+
+    - name: Commit and push if it changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Sync Iron Bank: ${timestamp}" || exit 0
+        git push
