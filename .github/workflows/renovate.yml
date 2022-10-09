@@ -31,8 +31,6 @@ jobs:
         URL=$(niet url resources_arm.json)
         echo $URL
         curl --silent --output traefik.tar.gz $URL
-        git config advice.addIgnoredFile false
-        git add traefik.tar.gz
         rm resources*
 
     - name: Commit and push if it changed
