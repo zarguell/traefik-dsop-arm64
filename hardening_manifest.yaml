@@ -8,7 +8,7 @@ name: "opensource/traefik/traefik"
 # The most specific version should be the first tag and will be shown
 # on ironbank.dso.mil
 tags:
-- "v2.9.5"
+- "v2.9.6"
 - "latest"
 
 # Build args passed to Dockerfile ARGs
@@ -29,7 +29,7 @@ labels:
   # Name of the distributing entity, organization or individual
   org.opencontainers.image.vendor: "TraefikLabs"
   # Authoritative version of the software
-  org.opencontainers.image.version: "v2.9.5"
+  org.opencontainers.image.version: "v2.9.6"
   # Keywords to help with search (ex. "cicd,gitops,golang")
   mil.dso.ironbank.image.keywords: "reverse proxy, edge router, router, networking, load balancer"
   # This value can be "opensource" or "commercial"
@@ -39,11 +39,11 @@ labels:
 
 # List of resources to make available to the offline build context
 resources:
-  - url: "https://github.com/traefik/traefik/releases/download/v2.9.5/traefik_v2.9.5_linux_amd64.tar.gz"
+  - url: "https://github.com/traefik/traefik/releases/download/v2.9.6/traefik_v2.9.6_linux_amd64.tar.gz"
     filename: "traefik.tar.gz" # [required field] desired staging name for the build context
     validation:
       type: "sha256" # supported: sha256, sha512
-      value: "7c3810b840dea8fc8c3030b94308bfe9b36f633a4161c186d09cd6c371f02657" # must be lowercase
+      value: "9aabb29a10ac051161fe286cdaa5c336073f08f2298fb994dc4f0a5328e21f2f" # must be lowercase
 
 # List of project maintainers
 maintainers:
